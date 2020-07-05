@@ -103,8 +103,9 @@ def response(voice):#voice ile gelen veriyi sorgululamak için response adında 
         print("OWL ASİSTAN = "+secimhikaye)#seçilen hikaye ekrana yazılması için
 
     
-
-
+    if 'neler yapabiirsin' in voice:# eğer voice nin içinde neler yapabilirsin diye bir değer varsa bunları yap
+        speak('seninle sohbet edebilirim , saati söyleyebiilirim , hava durumunu söylerim ,senin yerine googleda arama yaparım ,canın sıkıldıysa fıkra anlatabilirim yada hikaye anlatabilirim , youtube dan birşeyler aratabilirim . peki sen ne yapmamı istersin')
+        print('seninle sohbet edebilirim , saati söyleyebiilirim , hava durumunu söylerim ,senin yerine googleda arama yaparım ,canın sıkıldıysa fıkra anlatabilirim yada hikaye anlatabilirim , youtube dan birşeyler aratabilirim . peki sen ne yapmamı istersin')
 
     if 'Sen kimsin' in voice:# eğer voice nin içinde sen kimsin diye bir değer varsa bunları yap
         speak('Benim adım OWL asistan yani baykuş asistan demek 7 24 çalışıyorum')#selendirelecek
@@ -138,6 +139,7 @@ def response(voice):#voice ile gelen veriyi sorgululamak için response adında 
         havadetay=parse[4] #havadetay adlı  değişkene parsenin 5. değeri olan dereceyi tanımlıyoruz
         speak(havail+" için hava"+havadetay+" derece")#sesli söyletiouz
         print("OWL ASİSTAN = "+havail+" için hava"+havadetay+" derece")#ekrana yazdırıyouz
+    
 
 
     if 'güle güle' in voice:# eğer voice nin içinde güle güle diye bir değer varsa bunları yap
