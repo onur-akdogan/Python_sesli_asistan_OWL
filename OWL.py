@@ -176,6 +176,25 @@ def speak(string):#speak adlı bir fonksiyon oluştuyouz
 
 
 
+print(Fore.GREEN)
+
+#bunun tek amacı bir görsellik olması için
+print('────────██████████████████████───────')
+print('──────██████████████████████████──────')
+print('────██████████████████████████████────')
+print('────████████████████████████████████──')
+print('──████████▒▒▒▒██████████████████████──')
+print('──██████▒▒▒▒▒▒▒▒██▒▒▒▒▒▒▒▒██████████──')
+print('──██████▒▒▒▒██▒▒▒▒▒▒▒▒██▒▒▒▒██████████')
+print('██████▒▒▒▒▒▒██▒▒▒▒▒▒▒▒██▒▒▒▒████▒▒████')
+print('██████▒▒▒▒▒▒██▒▒▒▒▒▒▒▒██▒▒▒▒██▒▒▒▒████')
+print('██████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██████')
+print('██████▒▒░░░░▒▒██▒▒▒▒██▒▒░░░░▒▒████████')
+print('████████░░░░▒▒▒▒████▒▒▒▒░░░░██████████')
+print('████████████▒▒▒▒▒▒▒▒▒▒▒▒██████████████')
+print('──██──████████████▒▒▒▒██████████──██──')
+print('────────────────██▒▒▒▒██──────██──────')
+
 speak('Seni dinliyorum Senin için ne yapabilirim')#ilk açılışta asiatanın bizi karşılaması için
 print(Fore.GREEN)
 print('OWL ASİSTAN = Seni dinliyorum Senin için ne yapabilirim')#ilk açılışta asiatanın bizi karşılamasını yazdırmak için
@@ -185,5 +204,9 @@ while 1:#tek bir komut aldıktan sonra kapanmaması için sonsuz döngü oluştu
     print(Fore.BLUE)
     print(voice)
     response(voice)
+    print(Fore.GREEN)
+    print('Dinliyorum')
+    speak('Dinliyorum')
+
 
 
