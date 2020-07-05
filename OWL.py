@@ -114,7 +114,11 @@ def response(voice):#voice ile gelen veriyi sorgululamak için response adında 
         print("OWL ASİSTAN = "+secimhikaye)#seçilen hikaye ekrana yazılması için
 
     
+<<<<<<< HEAD
     if 'neler yapabiirsin' or 'yeteneklerin neler' in voice:# eğer voice nin içinde neler yapabilirsin veya yeteneklerin neler diye bir değer varsa bunları yap
+=======
+    if 'Neler yapabilirsin' in voice:# eğer voice nin içinde neler yapabilirsin diye bir değer varsa bunları yap
+>>>>>>> 9f370babfa41c424eea34eee14b768a0cc5ffc80
         speak('seninle sohbet edebilirim , saati söyleyebiilirim , hava durumunu söylerim ,senin yerine googleda arama yaparım ,canın sıkıldıysa fıkra anlatabilirim yada hikaye anlatabilirim , youtube dan birşeyler aratabilirim . peki sen ne yapmamı istersin')
         print(Fore.GREEN)
         print('seninle sohbet edebilirim , saati söyleyebiilirim , hava durumunu söylerim ,senin yerine googleda arama yaparım ,canın sıkıldıysa fıkra anlatabilirim yada hikaye anlatabilirim , youtube dan birşeyler aratabilirim . peki sen ne yapmamı istersin')
