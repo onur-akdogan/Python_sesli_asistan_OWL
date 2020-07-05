@@ -122,6 +122,13 @@ def response(voice):#voice ile gelen veriyi sorgululamak için response adında 
         speak(search+' için bulduğum sonuçlar')#sesli bir şekilde seslendirme yapıyouz
         print("OWL ASİSTAN = "+search+' için bulduğum sonuçlar')#ekrana yazdırma yapıyouz
     
+    if "Youtube'da ara" in voice:# eğer voice nin içinde arama yap diye bir değer varsa bunları yap
+        searchy = record('ne aramamı istersin')#record ile aranmasını istediğimiz kelimeyi yada cümleyi alıp searchy değişkenine tanımlıyouz
+        url ='https://www.youtube.com/results?search_query='+searchy#https://google.com/search?q= adresine aldığımız searchy ı ekliyoruz ve url değişkenine tanımlıyouz
+        webbrowser.get().open(url)#web browserı açıyouz ve  url değişkenini dönderiyouz
+        speak(searchy+' için bulduğum sonuçlar')#sesli bir şekilde seslendirme yapıyouz
+        print("OWL ASİSTAN = "+searchy+' için bulduğum sonuçlar')#ekrana yazdırma yapıyouz
+    
     if 'hava durumu' in voice:# eğer voice nin içinde hava durumu diye bir değer varsa bunları yap
         #feedparser ile link deki veriyi çekip parçalıyouz bunuda parse değişkenine tanımlıyouz
         parse = feedparser.parse("http://rss.accuweather.com/rss/liveweather_rss.asp?metric=1&locCode=EUR|TR|71100|KIRIKKALE|")
@@ -153,3 +160,5 @@ while 1:#tek bir komut aldıktan sonra kapanmaması için sonsuz döngü oluştu
     voice=record()
     print(voice)
     response(voice)
+
+
