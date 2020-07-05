@@ -30,10 +30,10 @@ def record(ask = False):#record adlı bir fonksiyon oluşturuyoruz ve varsayıla
         try:#
             voice = r.recognize_google(audio,language='tr-TR')#Türkçe dinleme yapıp bunu voice e atıyoruz
         except sr.UnknownValueError:#gelen sesi tanımlayamazsa burası çalışıyor
-            speak("ne dedin, anlamadım , acaba tekrar edermisin")
+            
             print(Fore.GREEN)
             print("OWL ASİSTAN = ne dedin, anlamadım , acaba tekrar edermisin")
-
+            speak("ne dedin, anlamadım , acaba tekrar edermisin")
 
 
         except sr.RequestError:# eğerki sistemle alakalı bir hata alırsak burası çalışıyoruz
@@ -205,8 +205,9 @@ while 1:#tek bir komut aldıktan sonra kapanmaması için sonsuz döngü oluştu
     print(voice)
     response(voice)
     print(Fore.GREEN)
-    print('Dinliyorum')
-    speak('Dinliyorum')
+    speak('BAŞKA BİR İSTEĞİN VARMI')
+    print('BAŞKA BİR İSTEĞİN VARMI')
+    
 
 
 
