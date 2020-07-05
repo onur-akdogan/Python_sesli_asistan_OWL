@@ -124,8 +124,8 @@ def response(voice):#voice ile gelen veriyi sorgululamak için response adında 
     
     if "Youtube'da ara" in voice:# eğer voice nin içinde arama yap diye bir değer varsa bunları yap
         searchy = record('ne aramamı istersin')#record ile aranmasını istediğimiz kelimeyi yada cümleyi alıp searchy değişkenine tanımlıyouz
-        url ='https://www.youtube.com/results?search_query='+searchy#https://google.com/search?q= adresine aldığımız searchy ı ekliyoruz ve url değişkenine tanımlıyouz
-        webbrowser.get().open(url)#web browserı açıyouz ve  url değişkenini dönderiyouz
+        urly ='https://www.youtube.com/results?search_query='+searchy#https://google.com/search?q= adresine aldığımız searchy ı ekliyoruz ve urly değişkenine tanımlıyouz
+        webbrowser.get().open(urly)#web browserı açıyouz ve  urly değişkenini dönderiyouz
         speak(searchy+' için bulduğum sonuçlar')#sesli bir şekilde seslendirme yapıyouz
         print("OWL ASİSTAN = "+searchy+' için bulduğum sonuçlar')#ekrana yazdırma yapıyouz
     
