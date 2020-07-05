@@ -205,7 +205,7 @@ while 1:#tek bir komut aldıktan sonra kapanmaması için sonsuz döngü oluştu
     print(voice)
     response(voice)
     print(Fore.GREEN)
-    speak('BAŞKA BİR İSTEĞİN VARMI')
+    speak('başka bir isteğin varmı')
     print('BAŞKA BİR İSTEĞİN VARMI')
     
 
