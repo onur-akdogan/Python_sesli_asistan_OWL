@@ -1,4 +1,4 @@
-# Python_sesli_asistan_OWL
+# Python sesli asistan OWL
 yapay zeka ile çalışan sesli asistan owl
 1-gTTS 2.1.1 (bu paket text’ leri sese çeriri ve kullanıcıya sesli bir şekilde geri dünüş sağlıyacağız)
 Kurulumu: cmd ekranına “pip install gTTS”yazarak yapıyoruz.
