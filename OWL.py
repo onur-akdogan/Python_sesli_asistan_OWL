@@ -28,18 +28,18 @@ def record(ask = False):#record adlı bir fonksiyon oluşturuyoruz ve varsayıla
         audio = r.listen(source) # dinlenilen source u audio ya atıyoruz
         voice = ''
         try:#
-            voice = r.recognize_google(audio,language='tr-TR')#Türkçe dinleme yapıp bunu voice e atıyoruz
+            voice = r.recognize_google(audio,language='tr-TR').lower()#Türkçe dinleme yapıp bunu voice e atıyoruz
         except sr.UnknownValueError:#gelen sesi tanımlayamazsa burası çalışıyor
             
             print(Fore.GREEN)
-            print("OWL ASİSTAN = ne dedin, anlamadım , acaba tekrar edermisin")
+            print("G@CI  = ne dedin, anlamadım , acaba tekrar edermisin")
             speak("ne dedin, anlamadım , acaba tekrar edermisin")
 
 
         except sr.RequestError:# eğerki sistemle alakalı bir hata alırsak burası çalışıyoruz
             speak('Sistemin çalışmıyor')
             print(Fore.GREEN)
-            print('OWL ASİSTAN = Sistemin çalışmıyor')
+            print('G@CI  = Sistemin çalışmıyor')
 
 
         return voice #dinlediğimiz voice ı geri döndürüyoruz
@@ -57,16 +57,16 @@ def response(voice):#voice ile gelen veriyi sorgululamak için response adında 
 
         speak(secim)#seçilen söz seslendiriliecek
         print(Fore.GREEN)
-        print("OWL ASİSTAN = "+secim)#seçilen söz yazdırılacak
+        print("G@CI  = "+secim)#seçilen söz yazdırılacak
 
     if 'teşekkür ederim'  in voice:# eğer voice nin içinde teşekkür ederim diye bir değer varsa bunları yap
         print(Fore.GREEN)
-        print("OWL ASİSTAN = ne demek herzaman")#ekrana yazılacak veri
+        print("G@CI  = ne demek herzaman")#ekrana yazılacak veri
         speak("ne demek herzaman")#sesli bir şekilde söylenmesi için
     
     if 'iyiyim' in voice:# eğer voice nin içinde iyiyim diye bir değer varsa bunları yap
         print(Fore.GREEN)
-        print("OWL ASİSTAN = iyi olmana sevindim senin için ne yapabilirim")#ekrana yazılacak veri
+        print("G@CI  = iyi olmana sevindim senin için ne yapabilirim")#ekrana yazılacak veri
         speak("iyi olmana sevindim senin için ne yapabilirim")#sesli bir şekilde söylenmesi için
     
     if 'kötüyüm'  in voice:# eğer voice nin içinde kötüyüm diye bir değer varsa bunları yap
@@ -81,9 +81,9 @@ def response(voice):#voice ile gelen veriyi sorgululamak için response adında 
 
         speak(secimolumsuz)#seçilen söz seslendiriliecek
         print(Fore.GREEN)
-        print("OWL ASİSTAN = "+secimolumsuz)#seçilen söz ekrana yazılması için
+        print("G@CI  = "+secimolumsuz)#seçilen söz ekrana yazılması için
 
-    if 'Fıkra anlat' in voice:# eğer voice nin içinde Fıkra anlat diye bir değer varsa bunları yap
+    if 'fıkra anlat' in voice:# eğer voice nin içinde Fıkra anlat diye bir değer varsa bunları yap
         #fıkralar adlı bir dizi tanımlıyoruz
         fıkralar = ["Temel aldığı bir daktiloyu bozuk diye geri götürdü. Satıcı Neresi bozuk, dün aldığında sağlamdı.Temel:İki tane a yok, saat yazamıyorum.",
                 "Karınca Ve FilBir gün bir karınca bir file aşık olmuş. Annesi bu durumu onaylamamış  Karınca Bana değil karnımdakine acı, demiş.",
@@ -98,9 +98,9 @@ def response(voice):#voice ile gelen veriyi sorgululamak için response adında 
 
         speak(secimfık)#seçilen söz seslendiriliecek
         print(Fore.GREEN)
-        print("OWL ASİSTAN = "+secimfık)#seçilen söz ekrana yazılması için
+        print("G@CI  = "+secimfık)#seçilen söz ekrana yazılması için
 
-    if 'Hikaye anlat' in voice:# eğer voice nin içinde hikaye anlat diye bir değer varsa bunları yap
+    if 'hikaye anlat' in voice:# eğer voice nin içinde hikaye anlat diye bir değer varsa bunları yap
         #fıkralar adlı bir dizi tanımlıyoruz
         hikayeler=[
                 "Bir varmış bir yokmuş iki varmış üç yokmuş ve son",
@@ -111,24 +111,24 @@ def response(voice):#voice ile gelen veriyi sorgululamak için response adında 
 
         speak(secimhikaye)#seçilen hikaye seslendiriliecek
         print(Fore.GREEN)
-        print("OWL ASİSTAN = "+secimhikaye)#seçilen hikaye ekrana yazılması için
+        print("G@CI  = "+secimhikaye)#seçilen hikaye ekrana yazılması için
 
     
-    if 'Neler yapabilirsin' in voice:# eğer voice nin içinde neler yapabilirsin diye bir değer varsa bunları yap
+    if 'neler yapabilirsin' in voice:# eğer voice nin içinde neler yapabilirsin diye bir değer varsa bunları yap
         speak('seninle sohbet edebilirim , saati söyleyebiilirim , hava durumunu söylerim ,senin yerine googleda arama yaparım ,canın sıkıldıysa fıkra anlatabilirim yada hikaye anlatabilirim , youtube dan birşeyler aratabilirim . peki sen ne yapmamı istersin')
         print(Fore.GREEN)
         print('seninle sohbet edebilirim , saati söyleyebiilirim , hava durumunu söylerim ,senin yerine googleda arama yaparım ,canın sıkıldıysa fıkra anlatabilirim yada hikaye anlatabilirim , youtube dan birşeyler aratabilirim . peki sen ne yapmamı istersin')
 
-    if 'Sen kimsin'  in voice:# eğer voice nin içinde sen kimsin diye bir değer varsa bunları yap
+    if 'sen kimsin'  in voice:# eğer voice nin içinde sen kimsin diye bir değer varsa bunları yap
         print(Fore.GREEN)
-        speak('Benim adım OWL asistan yani baykuş asistan demek 7 24 çalışıyorum')#selendirelecek
-        print('OWL ASİSTAN = Benim adım OWL asistan yani baykuş asistan demek 7 24 çalışıyorum')#ekrana yazılacak
+        speak('Benim adım G@CI asistan yani baykuş asistan demek 7 24 çalışıyorum')#selendirelecek
+        print('G@CI  = Benim adım G@CI asistan yani baykuş asistan demek 7 24 çalışıyorum')#ekrana yazılacak
         
 
     if 'saat kaç' in voice:# eğer voice nin içinde saat kaç diye bir değer varsa bunları yap
         speak(datetime.now().strftime('%H:%M:%S'))#datetime.now sayesinde anlık saati alıyoruz ve seslendiriyouz
         print(Fore.GREEN)
-        print("OWL ASİSTAN = "+datetime.now().strftime('%H:%M:%S'))#datetime.now sayesinde anlık saati alıyoruz ve yazdırıyoruz
+        print("G@CI  = "+datetime.now().strftime('%H:%M:%S'))#datetime.now sayesinde anlık saati alıyoruz ve yazdırıyoruz
 
     if 'arama yap' in voice:# eğer voice nin içinde arama yap diye bir değer varsa bunları yap
         search = record('ne aramamı istersin')#record ile aranmasını istediğimiz kelimeyi yada cümleyi alıp search değişkenine tanımlıyouz
@@ -136,15 +136,15 @@ def response(voice):#voice ile gelen veriyi sorgululamak için response adında 
         webbrowser.get().open(url)#web browserı açıyouz ve  url değişkenini dönderiyouz
         speak(search+' için bulduğum sonuçlar')#sesli bir şekilde seslendirme yapıyouz
         print(Fore.GREEN)
-        print("OWL ASİSTAN = "+search+' için bulduğum sonuçlar')#ekrana yazdırma yapıyouz
+        print("G@CI  = "+search+' için bulduğum sonuçlar')#ekrana yazdırma yapıyouz
     
-    if "YouTube'da ara" in voice:# eğer voice nin içinde arama yap diye bir değer varsa bunları yap
+    if "youTube'da ara" in voice:# eğer voice nin içinde arama yap diye bir değer varsa bunları yap
         searchy = record('ne aramamı istersin')#record ile aranmasını istediğimiz kelimeyi yada cümleyi alıp searchy değişkenine tanımlıyouz
         urly ='https://www.youtube.com/results?search_query='+searchy#https://google.com/search?q= adresine aldığımız searchy ı ekliyoruz ve urly değişkenine tanımlıyouz
         webbrowser.get().open(urly)#web browserı açıyouz ve  urly değişkenini dönderiyouz
         speak(searchy+' için bulduğum sonuçlar')#sesli bir şekilde seslendirme yapıyouz
         print(Fore.GREEN)
-        print("OWL ASİSTAN = "+searchy+' için bulduğum sonuçlar')#ekrana yazdırma yapıyouz
+        print("G@CI  = "+searchy+' için bulduğum sonuçlar')#ekrana yazdırma yapıyouz
     
     if 'hava durumu' in voice:# eğer voice nin içinde hava durumu diye bir değer varsa bunları yap
         #feedparser ile link deki veriyi çekip parçalıyouz bunuda parse değişkenine tanımlıyouz
@@ -155,14 +155,14 @@ def response(voice):#voice ile gelen veriyi sorgululamak için response adında 
         havadetay=parse[4] #havadetay adlı  değişkene parsenin 5. değeri olan dereceyi tanımlıyoruz
         speak(havail+" için hava"+havadetay+" derece")#sesli söyletiouz
         print(Fore.GREEN)
-        print("OWL ASİSTAN = "+havail+" için hava"+havadetay+" derece")#ekrana yazdırıyouz
+        print("G@CI  = "+havail+" için hava"+havadetay+" derece")#ekrana yazdırıyouz
     
 
 
     if 'güle güle' in voice:# eğer voice nin içinde güle güle diye bir değer varsa bunları yap
         speak('görüşürüz')#sesli söyletiouz
         print(Fore.GREEN)
-        print('OWL ASİSTAN = görüşürüz')#ekrana yazdırıyouz
+        print('G@CI  = görüşürüz')#ekrana yazdırıyouz
         exit()# uygulamadan çıkış yapıyouz
 
 def speak(string):#speak adlı bir fonksiyon oluştuyouz 
@@ -174,9 +174,9 @@ def speak(string):#speak adlı bir fonksiyon oluştuyouz
     os.remove(file)#dosyayı siliyouz
 
 
+  
 
-
-print(Fore.GREEN)
+print(Fore.RED)
 
 #bunun tek amacı bir görsellik olması için
 print('────────██████████████████████───────')
@@ -197,7 +197,7 @@ print('────────────────██▒▒▒▒██�
 
 speak('Seni dinliyorum Senin için ne yapabilirim')#ilk açılışta asiatanın bizi karşılaması için
 print(Fore.GREEN)
-print('OWL ASİSTAN = Seni dinliyorum Senin için ne yapabilirim')#ilk açılışta asiatanın bizi karşılamasını yazdırmak için
+print('G@CI  = Seni dinliyorum Senin için ne yapabilirim')#ilk açılışta asiatanın bizi karşılamasını yazdırmak için
 time.sleep(1)#uygulamyı 1 saniye uyutuyouz dinlemede karışıklık olmaması için
 while 1:#tek bir komut aldıktan sonra kapanmaması için sonsuz döngü oluşturuyoruz
     voice=record()
